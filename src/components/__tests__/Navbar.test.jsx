@@ -1,13 +1,14 @@
-import {render, screen} from '@testing-library/react';
-import Navbar from '../Navbar.jsx';
+import { screen } from '@testing-library/react';
+import Navbar from '../Navbar';
+import { renderWithProviders } from '../../utils/test-utils';
 
 describe('Componente Navbar',() => {
     it('debe contener los enlaces de navegación',() => {
-        render(<Navbar/>);
+        renderWithProviders(<Navbar/>);
         const linkProductos = screen.getByText(/Productos/i);
         const linkContacto = screen.getByText(/Contacto/i);
 
-        expect(linkProductos).toBeTruthy();
-        expect(linkContacto).toBeTruthy();
+        expect(linkProductos).toBeInTheDocument();
+        expect(linkContacto).toBeInTheDocument();
     })
 });

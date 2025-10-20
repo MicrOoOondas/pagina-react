@@ -1,8 +1,12 @@
 import { NavLink } from "react-router-dom";
+import { useCart } from '../context/CartContext.jsx';
 import '../css/Navbar.css';
 
 function Navbar()
 {
+    const { cartItems } = useCart();
+    const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+
     return(
         <nav className="navbar navbar-expand-lg navbar-dark fixed-top techcore-navbar">
             <div className="container">
@@ -27,15 +31,23 @@ function Navbar()
                         <li className="nav-item">
                             <NavLink to="/contact" className="nav-link nav-link-techcore">Contacto</NavLink>
                         </li>
+                        <li className="nav-item">
+                            <NavLink to="/cart" className="nav-link nav-link-techcore cart-link">
+                                Carrito
+                                {totalItems > 0 && <span className="cart-badge">{totalItems}</span>}
+                            </NavLink>
+                        </li>
                     </ul>
+                    <button className="btn btn-danger float-end logout-btn-techcore"
+                    onClick={() => {
+                        // Restablece la preferencia del modal de confirmación al cerrar sesión
+                        localStorage.setItem('showCartConfirmation', 'true');
+                        localStorage.removeItem("isAuthenticated");
+                        window.location.href="/login"
+                    }}>
+                        Cerrar Sesión
+                    </button>
                 </div>
-                <button className="btn btn-danger float-end logout-btn-techcore"
-                onClick={() => {
-                    localStorage.removeItem("isAuthenticated");
-                    window.location.href="/login"
-                }}>
-                    Cerrar Sesión
-                </button>
             </div>
         </nav>
     );

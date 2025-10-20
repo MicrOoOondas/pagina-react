@@ -73,3 +73,20 @@
     background-color: #c53030 !important; /* Rojo más oscuro */
     border-color: #c53030 !important;
 }
+
+/* Estilos para el enlace del carrito */
+.cart-link {
+    display: flex;
+    align-items: center;
+}
+
+.cart-badge {
+    background-color: #4a90e2;
+    color: #fff;
+    border-radius: 50%;
+    padding: 2px 8px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-left: 8px;
+    line-height: 1;
+}

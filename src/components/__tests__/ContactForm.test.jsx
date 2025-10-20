@@ -1,24 +1,47 @@
-import { render, screen, fireEvent } from "@testing-library/react";
-import ContactForm from "../ContactForm";
+import React from 'react';
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import ContactForm from '../components/ContactForm';
+import { renderWithProviders } from '../utils/test-utils';
 
-describe('Componente ContactForm',()=>{
-    it('Debe limpiar los campos después de enviar form exitoso',() => {
-        render(<ContactForm/>);
+describe('ContactForm', () => {
+  // Mock del alert para que no interrumpa los tests
+  beforeAll(() => {
+    jest.spyOn(window, 'alert').mockImplementation(() => {});
+  });
 
-        const nombre = screen.getByLabelText(/Nombre/i);
-        const email = screen.getByLabelText(/Email/i);
-        const mensaje = screen.getByLabelText(/Mensaje/i);
-        const boton = screen.getByRole('button',{name:/Enviar/i});
+  test('muestra errores de validación si los campos están vacíos al enviar', async () => {
+    renderWithProviders(<ContactForm />);
+    
+    const submitButton = screen.getByRole('button', { name: /enviar/i });
+    await userEvent.click(submitButton);
 
-        fireEvent.change(nombre,{target:{value:'Juan'}});
-        fireEvent.change(email,{target:{value:'juan@mail.com'}});
-        fireEvent.change(mensaje,{target:{value:'Hola'}});
-        fireEvent.click(boton);
+    // Verifica que los mensajes de error aparecen
+    expect(await screen.findByText('El nombre es obligatorio')).toBeInTheDocument();
+    expect(screen.getByText('El email es obligatorio')).toBeInTheDocument();
+    expect(screen.getByText('El mensaje es obligatorio')).toBeInTheDocument();
+  });
 
-        expect(nombre.value).toBe('');
-        expect(email.value).toBe('');
-        expect(mensaje.value).toBe('');
+  test('muestra error si el formato del email no es válido', async () => {
+    renderWithProviders(<ContactForm />);
 
+    const emailInput = screen.getByLabelText(/email/i);
+    await userEvent.type(emailInput, 'correo-invalido');
+    
+    const submitButton = screen.getByRole('button', { name: /enviar/i });
+    await userEvent.click(submitButton);
 
-    });
+    expect(await screen.findByText('El formato del email no es válido')).toBeInTheDocument();
+  });
+
+  test('envía el formulario correctamente con datos válidos', async () => {
+    renderWithProviders(<ContactForm />);
+
+    await userEvent.type(screen.getByLabelText(/nombre/i), 'Jesús');
+    await userEvent.type(screen.getByLabelText(/email/i), 'jesus@test.com');
+    await userEvent.type(screen.getByLabelText(/mensaje/i), 'Este es un mensaje de prueba.');
+    await userEvent.click(screen.getByRole('button', { name: /enviar/i }));
+
+    expect(window.alert).toHaveBeenCalledWith('Mensaje enviado correctamente');
+  });
 });
