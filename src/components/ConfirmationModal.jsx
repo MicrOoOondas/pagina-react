@@ -7,20 +7,20 @@ function ConfirmationModal() {
     const [dontShowAgain, setDontShowAgain] = useState(false); 
 
     if (!confirmation.show) {
-        return null; // Don't render if not visible
+        return null; // No renderizar si no está visible
     }
 
     const handleConfirm = () => {
-        confirmation.onConfirm(); // Call the confirm action from context
-        setConfirmation({ show: false, message: '', onConfirm: () => {} }); // Close the modal
-        setDontShowAgain(false); // Reset checkbox state after action
+        confirmation.onConfirm(); // Llama a la acción de confirmación desde el contexto
+        setConfirmation({ show: false, message: '', onConfirm: () => {} }); // Cierra el modal
+        setDontShowAgain(false); // Reinicia el estado del checkbox después de la acción
     };
 
     return (
         <div className="modal-overlay">
             <div className="modal-content">
                 <h3 className="modal-title">¿Estás seguro?</h3>
-                <p className="modal-text">{confirmation.message}</p> {/* Display message from context */}
+                <p className="modal-text">{confirmation.message}</p> {/* Muestra el mensaje desde el contexto */}
                 <div className="modal-checkbox-container">
                     <input
                         type="checkbox"
