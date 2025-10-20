@@ -1,0 +1,134 @@
+/* Estilos generales para la sección de contacto */
+#contact-section {
+    display: flex;
+    align-items: center;
+    padding: 100px 20px; /* Aumentamos el padding superior */
+    min-height: 90vh; /* Ocupa casi toda la altura de la pantalla */
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); /* Fondo con gradiente sutil */
+}
+
+/* Contenedor principal del formulario */
+#contact-container {
+    width: 100%;
+    max-width: 700px; /* Hacemos el formulario un poco más ancho */
+    margin: 0 auto;
+}
+
+/* Envoltura del formulario para centrar y dar estilo */
+#contact-form-wrapper {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px; /* Bordes más redondeados */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+    transition: transform 0.3s ease;
+}
+
+/* Título del formulario */
+#contact-title {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 2.5rem; /* Título más grande */
+    font-weight: bold;
+}
+
+/* Estilo para el nuevo texto introductorio */
+#contact-intro-text {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Estilo para los grupos de formulario (label + input) */
+#form-group-nombre,
+#form-group-email,
+#form-group-mensaje {
+    margin-bottom: 20px;
+}
+
+/* Estilo para las etiquetas */
+#nombre-label,
+#email-label,
+#mensaje-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Estilo para los campos de entrada y el área de texto */
+#nombre,
+#email,
+#mensaje {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+/* Efecto de foco en los inputs */
+#nombre:focus,
+#email:focus,
+#mensaje:focus {
+    border-color: #4CAF50; /* Color de resalte al seleccionar */
+    outline: none; /* Quita el borde por defecto del navegador */
+}
+
+/* Estilo para los mensajes de error */
+#nombre-error,
+#email-error,
+#mensaje-error {
+    color: #d9534f; /* Rojo para errores */
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* Estilo para los mensajes de éxito/validación */
+#nombre-success,
+#email-success,
+#mensaje-success {
+    color: #5cb85c; /* Verde para éxito */
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* Contenedor de los botones */
+#contact-form-buttons {
+    text-align: center; /* Centra el botón */
+    margin-top: 20px;
+}
+
+/* Botón de enviar */
+#enviar-btn {
+    background-color: #4CAF50; /* Color de fondo verde */
+    color: white;
+    border: none;
+    padding: 15px 30px; /* Botón más grande */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase; /* Texto en mayúsculas */
+    letter-spacing: 1px; /* Espaciado entre letras */
+}
+
+/* Efecto hover para el botón */
+#enviar-btn:hover {
+    background-color: #45a049; /* Un verde un poco más oscuro */
+    transform: translateY(-2px); /* Ligero efecto de elevación */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Estilo para el asterisco de campo obligatorio */
+.required-asterisk {
+    color: #d9534f; /* Mismo rojo que los mensajes de error */
+    margin-left: 4px; /* Pequeño espacio para separarlo del texto */
+}
+
+/* se ha modificado un poco pero no lo suficiente ademas que las letras de "porque elegir techcore" estan muy pegadas al final , yo diria que hay que meterlas en un div para separarlos y mantenerlos mejor ordenados en su lugar siin moverse y asi extender mas el cuadro blanco hacia abajo para que asi cubra todo ese espacio de separacion que tiene con el footer y el footer no esta abarcando todo el espacio horizontal de la pagina */

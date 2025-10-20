@@ -1,12 +1,13 @@
 function ProductCard({product})
 {
     return(
-        <div className="card h-100 shadow-sm">
+        <div className="product-card">
             <img src={product.img} alt={product.name} 
-            className="card-im-top"/>
-            <div className="card-body d-flex flex-column">
-                <h5 className="card-title">{product.name}</h5>
-                <p className="card-text">{product.desc}</p>
+            className="product-image"/>
+            <div className="product-card-body">
+                <h3 className="product-title">{product.name}</h3>
+                <p className="product-description">{product.desc}</p>
+                <button className="add-to-cart-btn">Agregar al Carro</button>
             </div>
         </div>
     );

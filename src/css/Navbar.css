@@ -1,0 +1,75 @@
+/* Sobrescribimos el fondo por defecto de Bootstrap */
+.techcore-navbar {
+    background-color: #1a202c !important; /* Un azul oscuro, casi negro, muy elegante */
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para el logo/nombre de la marca */
+.navbar-brand-techcore {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff !important;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand-techcore:hover {
+    color: #4a90e2 !important; /* Un azul brillante para el hover */
+}
+
+/* Estilos para los enlaces de navegación */
+.nav-link-techcore {
+    color: #cbd5e0 !important; /* Un gris azulado claro */
+    font-weight: 500;
+    margin: 0 10px;
+    position: relative;
+    padding-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+/* Efecto de línea inferior al pasar el mouse */
+.nav-link-techcore::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #4a90e2;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.4s ease;
+}
+
+.nav-link-techcore:hover {
+    color: #fff !important;
+}
+
+.nav-link-techcore:hover::after {
+    transform: scaleX(1);
+}
+
+/* Estilo para el enlace activo */
+.nav-link-techcore.active {
+    color: #fff !important;
+    font-weight: bold;
+}
+
+.nav-link-techcore.active::after {
+    transform: scaleX(1);
+    background-color: #4a90e2;
+}
+
+/* Estilo para el botón de Cerrar Sesión */
+.logout-btn-techcore {
+    background-color: #e53e3e !important; /* Rojo */
+    border-color: #e53e3e !important;
+    font-weight: bold;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.logout-btn-techcore:hover {
+    background-color: #c53030 !important; /* Rojo más oscuro */
+    border-color: #c53030 !important;
+}

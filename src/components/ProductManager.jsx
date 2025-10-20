@@ -145,7 +145,7 @@ function ProductManager(){
 
                     
                     <div className="col-md-4">
-                        <label htmlFor="price">Descripcion:</label>
+                        <label htmlFor="price">Precio:</label>
                         <input type="number" 
                             id="price"
                             name="price"

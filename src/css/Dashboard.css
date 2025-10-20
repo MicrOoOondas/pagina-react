@@ -1,0 +1,23 @@
+#dashboard-container {
+    padding: 100px 20px; /* Aumentamos el padding superior */
+    background-color: #f9f9f9;
+    min-height: 90vh;
+}
+
+#dashboard-title {
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+/* 
+  Añadimos un margen inferior a cada sección dentro del dashboard 
+  para que no estén pegadas.
+*/
+#chart-section,
+#product-manager-container, /* Asumiendo que ProductManager tiene un ID de contenedor */
+#data-table-section {
+    margin-bottom: 50px;
+}
