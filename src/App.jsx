@@ -1,7 +1,5 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+
+import '../src/css/App.css'
 import Navbar from './components/Navbar.jsx'
 import Products from './components/Products.jsx'
 import ContactForm from './components/ContactForm.jsx'
@@ -21,13 +19,20 @@ function App() {
         <Route path="/productos"
           element={
             <ProtectedRoute>
-               <Navbar/>
+              <Navbar/>
+              
               <Products/>
-              <ContactForm/>
+
               <ChartSection/>
-              <DataTable/>
+
               <ProductManager/>
+
+              <DataTable/>
+
+              <ContactForm/>
+
             </ProtectedRoute>
+
           }/>
 
           <Route path="*" element={<Login/>}/>

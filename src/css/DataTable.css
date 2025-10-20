@@ -1,0 +1,64 @@
+/* Estilo para la sección que contiene la tabla */
+#data-table-section {
+    padding: 20px;
+    background-color: #f4f7f6; /* Un fondo suave para toda la sección */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Contenedor principal de la tabla, centrado en la página */
+#data-table-container {
+    max-width: 900px; /* Ancho máximo para la tabla */
+    margin: 40px auto; /* Centra el contenedor horizontalmente */
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+}
+
+#data-table-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 2rem; /* Título más grande */
+}
+
+#products-table {
+    width: 100%; /* La tabla ocupa el ancho máximo del contenedor */
+    border-collapse: collapse;
+}
+
+#products-table th {
+    background-color: #4CAF50; /* Color de fondo para los encabezados */
+    color: white;
+    font-weight: bold;
+    padding: 12px 15px;
+    text-align: center; /* Centra el texto de los encabezados */
+}
+
+#products-table th, #products-table td {
+    border: 1px solid #dddddd;
+    text-align: center; /* Centra el texto de las celdas */
+    padding: 12px 15px; /* Más espaciado interno */
+}
+
+#products-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3; /* Color para filas pares, mejora la legibilidad */
+}
+
+#export-excel-button {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block; /* Permite centrar el botón */
+    margin-left: auto; /* Centra el botón */
+    margin-right: auto; /* Centra el botón */
+}
+
+#export-excel-button:hover {
+    background-color: #45a049; /* Un poco más oscuro al pasar el mouse */
+}
+

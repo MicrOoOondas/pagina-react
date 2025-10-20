@@ -1,5 +1,6 @@
 import * as XLSX from 'xlsx'
 import { saveAs } from 'file-saver'
+import '../css/DataTable.css';
 
 function DataTable() {
     const rows = [
@@ -18,10 +19,10 @@ function DataTable() {
     };
 
     return(
-        <section className='section'>
-            <div className="container">
-                <h2 className="mb-4">Tabla de Productos</h2>
-                <table className="table table-striped">
+        <section id='data-table-section'>
+            <div id="data-table-container">
+                <h2 id="data-table-title">Tabla de Productos</h2>
+                <table id="products-table">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -41,7 +42,7 @@ function DataTable() {
                         ))}
                     </tbody>
                 </table>
-                <button className='btn btn-success' onClick={exportToExcel}>Exportar a Excel</button>
+                <button id='export-excel-button' onClick={exportToExcel}>Exportar a Excel</button>
             </div>
         </section>
     );
