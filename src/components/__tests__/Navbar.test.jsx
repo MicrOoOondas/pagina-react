@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import Navbar from '../Navbar';
-import { renderWithProviders } from '../../utils/test-utils';
+import { renderWithProviders } from '../../utils/test-utils.jsx';
 
 describe('Componente Navbar',() => {
     it('debe contener los enlaces de navegación',() => {
